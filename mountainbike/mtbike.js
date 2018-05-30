@@ -48,6 +48,7 @@ async function addGeojson(url) {
 	console.log("Url wird geladen: ", url);
 	const response = await fetch(response);
 	console.log("Response: ", response);
-};
+}
+
 
 
