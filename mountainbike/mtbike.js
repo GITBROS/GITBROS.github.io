@@ -58,7 +58,9 @@ L.control.scale({
 async function addGeojson(url) {
     const response = await fetch(url);
     const wienData = await response.json();
+    console.log(wienData)
     const geojson = L.geoJSON(wienData);
+    console.log (geojson)
     strecken.addLayer(geojson);
     myMap.fitBounds(wienGroup.getBounds());
 }
