@@ -48,13 +48,34 @@ L.control.scale({
 }).addTo(myMap); 
 
 
-let gpxTrack = new L.GPX("Mountainbike_Strecken.gpx", {
+/*let gpxTrack = new L.GPX("Mountainbike_Strecken.gpx", {
       async : true,
-     })
+     })*/
 
 
-L.geoJSON(mountainbikestrecken).addTo(myMap);
+//L.geoJSON(mountainbikestrecken).addTo(myMap);
 
+async function addGeojson(url) {
+    const response = await fetch(url);
+    const wienData = await response.json();
+    const geojson = L.geoJSON(wienData, {
+        style: function(feature){
+            return{color: "#ff0000"};
+        }, 
+        pointToLayer: function(geoJsonPoint, latlng) {
+            return L.marker(latlng, {
+                icon: L.icon({
+                    iconUrl: "icons/robbery.png"
+                })
+            });
+        }
+    });
+    strecken.addLayer(geojson);
+    myMap.fitBounds(wienGroup.getBounds());
+}
+
+
+const url = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&srsName=EPSG:4326&outputFormat=json&typeName=ogdwien:SPAZIERPUNKTOGD,ogdwien:SPAZIERLINIEOGD"
 
 
 
