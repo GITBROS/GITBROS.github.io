@@ -58,18 +58,7 @@ L.control.scale({
 async function addGeojson(url) {
     const response = await fetch(url);
     const wienData = await response.json();
-    const geojson = L.geoJSON(wienData, {
-        style: function(feature){
-            return{color: "#ff0000"};
-        }, 
-        pointToLayer: function(geoJsonPoint, latlng) {
-            return L.marker(latlng, {
-                icon: L.icon({
-                    iconUrl: "icons/robbery.png"
-                })
-            });
-        }
-    });
+    const geojson = L.geoJSON(wienData);
     strecken.addLayer(geojson);
     myMap.fitBounds(wienGroup.getBounds());
 }
