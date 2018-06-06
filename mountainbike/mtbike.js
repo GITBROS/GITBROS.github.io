@@ -2,6 +2,8 @@
 let myMap = L.map("mapdiv",{
 	fullscreenControl: true,
 });
+let strecken = L.featureGroup();
+myMap.addLayer(strecken);
 
 const salzburgGroup = L.featureGroup();
 
@@ -26,7 +28,8 @@ let myLayers = {
     )
 };
 
-myMap.addLayer(myLayers.osm); 
+myMap.addLayer(myLayers.osm);
+ 
 
 let myMapControl = L.control.layers({ 
 	"Openstreetmap" : myLayers.osm,
@@ -45,18 +48,14 @@ L.control.scale({
 }).addTo(myMap); 
 
 
+let gpxTrack = new L.GPX("Mountainbike_Strecken.gpx", {
+      async : true,
+     })
 
-async function addGeojson(url) {
-	console.log("Url wird geladen: ", url);
-	const response = await fetch(url);
-    console.log("Response: ", response);
-    const salzburgdata = await response.json();
-    console.log("GeoJson: ", salzburgdata);
-    }
 
-const url = "http://www.salzburg.gv.at/ogd/e5bc00bf-a84a-46fa-9494-b43ba606f1f6/Mountainbike_Strecken.json";
+L.geoJSON(mountainbikestrecken).addTo(myMap);
 
-addGeojson(url)
+
 
 
 
