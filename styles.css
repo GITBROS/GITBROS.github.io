@@ -130,6 +130,33 @@ body {
   clear: both;
 }
 
+#mapdiv {
+  border: 4px solid rgb(180, 105, 20);
+  border-radius: 0%;
+  border-width: thick;
+  margin-left: 100px;
+}
 
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 320px;
+  height:426px;
+  border: 10px solid rgb(180, 105, 20);
+  margin-left: 100px;
+  border-width: thick;
+  border-radius: 0%;
+  margin-bottom: 0px;
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 3px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(180, 105, 20, 0.377);
+}
 
 
