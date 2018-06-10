@@ -6,11 +6,12 @@ let myMap = L.map("mapdiv", {
     fullscreenControl: true,
 });
 const hash = new L.Hash(myMap);
+L.Control.measureControl().addTo(myMap);
+L.control.mousePosition().addTo(myMap);
 
 // Variablen
 const strecken = L.featureGroup().addTo(myMap);
 const steigung = L.featureGroup();
-var popup = L.popup();
 
 // Layer
 let myLayers = {
@@ -48,7 +49,7 @@ myMap.addControl(myMapControl);
 
 // Massstab
 L.control.scale({
-    position: "bottomleft",
+    position: "bottomright",
     maxWidth: 200,
     metric: true,
     imperial: false,
@@ -169,14 +170,6 @@ hilfsTrack.on("loaded", function (evt) {
     document.getElementById("abstieg").innerHTML = abstieg;
 });
 
-// Heraussuchen der Koordinaten
-function onMapClick(evt) {
-    popup
-        .setLatLng(evt.latlng)
-        .setContent("You clicked the map at " + evt.latlng.toString())
-        .openOn(myMap);
-};
-myMap.on('click', onMapClick);
 
 
 
