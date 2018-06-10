@@ -2,10 +2,7 @@
 let myMap = L.map("mapdiv",{
 	fullscreenControl: true,
 });
-let strecken = L.featureGroup();
-myMap.addLayer(strecken);
-
-const salzburgGroup = L.featureGroup();
+const strecken = L.featureGroup();
 
 let myLayers = {
     osm : L.tileLayer( 
@@ -35,6 +32,8 @@ let myMapControl = L.control.layers({
 	"Openstreetmap" : myLayers.osm,
 	"basemap.at Grundkarte": myLayers.geolandbasemap,
     "basemap.at Orthofoto": myLayers.bmaporthofoto30cm,
+},{
+	"strecken" : strecken
 });
 
 myMap.addControl(myMapControl); 
@@ -47,29 +46,37 @@ L.control.scale({
 	imperial: false, 
 }).addTo(myMap); 
 
+	 
+// new L.GPX("Mountainbike_Strecken.gpx", {async: true}).on('loaded', function(e) {
+// 	   myMap.fitBounds(e.target.getBounds());
+// 	 }).addTo(myMap);
 
-/*let gpxTrack = new L.GPX("Mountainbike_Strecken.gpx", {
-      async : true,
-     })*/
+
+//Einlesen aus data.gv.at
+const url = "https://cors.io/?http://www.salzburg.gv.at/ogd/e5bc00bf-a84a-46fa-9494-b43ba606f1f6/Mountainbike_Strecken.json"
 
 
-//L.geoJSON(mountainbikestrecken).addTo(myMap);
 
 async function addGeojson(url) {
+    console.log("Url wird geladen: ", url);
     const response = await fetch(url);
-    const wienData = await response.json();
-    console.log(wienData)
-    const geojson = L.geoJSON(wienData);
-    console.log (geojson)
-    strecken.addLayer(geojson);
-    myMap.fitBounds(wienGroup.getBounds());
+    console.log("Response: ", response);
+    const mtstrecken = await response.json();
+    console.log("Geojson: ", mtstrecken);
+    const geojson = L.geoJSON(mtstrecken).bindPopup(function (layer) {
+		const props = layer.feature.properties;
+        const popupText = `<h1>${props.STANDORTNAME}</h1>
+        <p>Bezirk: ${props.HOMEPAGE} </p>`;
+        return popupText});
+	//.addTo(strecken)
+	strecken.addLayer(geojson);
 }
-
-
-const url = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&srsName=EPSG:4326&outputFormat=json&typeName=ogdwien:SPAZIERPUNKTOGD,ogdwien:SPAZIERLINIEOGD"
-
-
 addGeojson(url);
+
+
+//Einlesen aus lokal gespeicherte Datei
+//console.log(test)
+//L.geoJSON(test).addTo(strecken)
 
 
 
