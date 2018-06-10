@@ -142,8 +142,8 @@ table {
   border-spacing: 0;
   width: 320px;
   height:426px;
-  border: 10px solid rgb(180, 105, 20);
-  margin-left: 100px;
+  border: 4px solid rgb(180, 105, 20);
+  margin-left: 0px;
   border-width: thick;
   border-radius: 0%;
   margin-bottom: 0px;
@@ -159,4 +159,44 @@ tr:nth-child(even) {
   background-color: rgba(180, 105, 20, 0.377);
 }
 
+#footer {
+  margin: 25px 0px 50px 0px;
+}
+#footer .back {
+  float: left;
+  margin-left: 100px;
+}
+#footer .next {
+  float: right;
+  margin-right: 100px;
 
+}
+
+.column2 {
+  float: left;
+  width: 640;
+  height: 426;
+  padding: 0px;
+  margin-left: 100px;
+  align-content: center;
+}
+
+.column2 p {
+  text-align: justify;
+  margin-right: 50px;
+}
+.column2 img {
+  border: 4px solid rgb(180, 105, 20);
+  border-radius: 0%;
+  border-width: thick;
+  height: 426px;
+  width: 633px;
+  
+}
+
+/* Clear floats after the columns */
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
