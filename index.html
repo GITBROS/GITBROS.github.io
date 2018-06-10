@@ -1,54 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sportregion Bayern</title>
-	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Sportregion Bayern</title>
+
+	<!--Verlinkung css-->
 	<link rel="stylesheet" href="styles.css" />
-	
-	
+
+	<!--Tabbild-->
+	<link rel="shortcut icon" href="images/bros.jpg" />
+
+	<!--Fonts-->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+	 crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+	 crossorigin="anonymous"></script>
 </head>
+
 <body>
 	<div class="navbar">
-	  <a href="index.html">Home</a>
-	  <div class="dropdown">
-	    <button class="dropbtn">Radwege 
-	      <i class="fa fa-caret-down"></i>
-	    </button>
-	    <div class="dropdown-content">
-	      <a href="BayernFahrradwege/Frankenradweg/index.html">Franken Radweg</a>
-	      <a href="#">Link 2</a>
-	      <a href="#">Link 3</a>
-		  <a href="#">Link 3</a>
-	    </div>
-	  </div> 
+		<div class="dropdown">
+			<button class="dropbtn">Fernfahrradreisen
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="BayernFahrradwege/Frankenradweg/index.html">Frankenradweg</a>
+				<a href="BayernFahrradwege/RomantischeStraße/index.html">Romantische Straße</a>
+				<a href="BayernFahrradwege/BodenseeKoenigsweg/index.html">Bodensee - Königssee</a>
+				<a href="BayernFahrradwege/Mainradweg/index.html">Mainradweg</a>
+			</div>
+		</div>
+		<a href="#home">Home</a>
+		<a href="#news">Impressum</a>
 	</div>
-	
-	
-	<div id="header">
-	<h1 class="white">Fahrradwege in Bayern</h1>
-	<h3 class="white">Willkommen</h1>
-		
-	    
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-    <div class="article">
-        <h1>Etappe 27 von Imst nach Wenns</h1><!-- TODO: anpassen -->
+	<div id="main">
+		<h1>Das Radwanderland Bayern</h1>
+		<div class=auflistung>
+			<div id=1>
+				<h3>Frankenradweg</h3>
+				<figure>
+					<figcaption class="gray">
+						<i class="fas fa-camera-retro"></i> Bamberg
+					</figcaption>
+					<img src="images/bamberg.jpg" alt="Bamberg" />
+				</figure>
+				<p>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+					aliquyam erat, sed diam voluptua. At vero eos et accusam et
+				</p>
+			</div>
+			<div id=2>
+				<h3>Romantische Straße</h3>
+				<figure>
+					<figcaption class="gray">
+						<i class="fas fa-camera-retro"></i> Neuschwanstein
+					</figcaption>
+					<img src="images/romantisch.jpg" alt="Neuschwanstein" />
+				</figure>
+				<p>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+					aliquyam erat, sed diam voluptua. At vero eos et accusam et
+				</p>
+			</div>
+			<div id=3>
+				<h3>Bodensee - Königssee</h3>
+				<figure>
+					<figcaption class="gray">
+						<i class="fas fa-camera-retro"></i> Königssee
+					</figcaption>
+					<img src="images/koenigssee.jpg" alt="Königssee" />
+				</figure>
+				<p>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+					aliquyam erat, sed diam voluptua. At vero eos et accusam et
+				</p>
+			</div>
+			<div id=4>
+				<h3>Mainradweg</h3>
+				<figure>
+					<figcaption class="gray">
+						<i class="fas fa-camera-retro"></i> Frankfurt
+					</figcaption>
+					<img src="images/frankfurt.jpg" alt="Frankfurt" />
+				</figure>
+				<p>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+					aliquyam erat, sed diam voluptua. At vero eos et accusam et
+				</p>
+			</div>
+		</div>
+	</div>
 
-        <p>Von Imst aus startet diese als schwer eingestufte Etappe und verbindet das Inntal mit dem Pitztal. Höhepunkt auf dieser Strecke – im wahrsten Sinne des Wortes wie auch in der Herausforderung – ist die knapp unter 2.000 Metern gelegene Venetalm, die Sie über eine steil ansteigende Schotterstraße erreichen. Dafür belohnt die Tour mit einem herrlichen Rundblick.</p>
-
-<div id="map"></div>
-
-	
 
 </body>
+
 </html>
