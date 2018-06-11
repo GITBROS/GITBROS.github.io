@@ -146,7 +146,7 @@ elevation.on("addline", function (evt) {
                 [p2.lat, p2.lng],
             ], {
                 color: farbe,
-                weight: 5,
+                weight: 3,
             }
         ).addTo(steigung);
     }
