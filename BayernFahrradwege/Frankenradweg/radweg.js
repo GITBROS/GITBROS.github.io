@@ -81,7 +81,7 @@ const markerOptionsFinish = {
 };
 
 //GPX Datei Einlesen
-new L.GPX(rohstrecke, { async: true }).on('loaded', function (e) {
+new L.GPX(rohstrecke, { async: true, polyline_options: { color: "rgb(180, 105, 20)" } }).on('loaded', function (e) {
     myMap.fitBounds(e.target.getBounds());
 }).addTo(strecken);
 
