@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mainradweg</title>
+
+    <!--Leafletkarte initialisieren-->
+    <link rel="stylesheet" href="../../js/leaflet/leaflet.css" />
+    <script src="../../js/leaflet/leaflet.js"></script>
+
+    <!--fullscreen-Funktion-->
+    <link href='../../js/leaflet.fullscreen/leaflet.fullscreen.css' rel='stylesheet' />
+    <script src='../../js/leaflet.fullscreen/Leaflet.fullscreen.min.js'></script>
+
+    <!--script einlesen-->
+    <script defer src="radweg.js"></script>
+
+    <!--<script src="../dataBayernRadwege/2FrankenRadweg__Bayernnetz_fuer_Radler.gpx"></script>-->
+    <script src='../../js/leaflet.gpx/gpx.js'></script>
+
+    <!--Leaflet Elevation-->
+    <script src="../../js/d3/d3.v3.min.js"></script>
+    <link rel="stylesheet" href="../../js/leaflet.elevation/leaflet.elevation-0.0.4.css" />
+    <script type="text/javascript" src="../../js/leaflet.elevation/leaflet.elevation-0.0.4.min.js"></script>
+
+    <!--Hash Plugin-->
+    <script src="../../js/leaflet.hash/leaflet-hash.js"></script>
+
+
+    <!--draw Plugin-->
+    <link rel="stylesheet" href="../../js/leaflet.measure/docs/leaflet-draw/dist/leaflet.draw.css" />
+    <script src="../../js/leaflet.measure/docs/leaflet-draw/dist/leaflet.draw.js"></script>
+
+    <!-- measure Plugin -->
+    <link rel="stylesheet" href="../../js/leaflet.measure/leaflet.measurecontrol.css" />
+    <script src="../../js/leaflet.measure/leaflet.measurecontrol.min.js"></script>
+
+    <!-- mouseposition Plugin -->
+    <link rel="stylesheet" href="../../js/leaflet.mouseposition/L.Control.MousePosition.css" />
+    <script src="../../js/leaflet.mouseposition/L.Control.MousePosition.js"></script>
+
+    <!--Verlinkung css-->
+    <link rel="stylesheet" href="../../styles.css" />
+
+    <!--Tabbild-->
+    <link rel="shortcut icon" href="../../images/bros.jpg" />
+
+    <!--Fonts-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">
+                <strong>Fernfahrradreisen</strong>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../Frankenradweg/index.html">
+                    <strong>Frankenradweg</strong>
+                </a>
+                <a href="../RomantischeStraße/index.html">
+                    <strong>Romantische Straße</strong>
+                </a>
+                <a href="../BodenseeKoenigssee/index.html">
+                    <strong>Bodensee - Königssee</strong>
+                </a>
+                <a href="index.html">
+                    <strong>Mainradweg</strong>
+                </a>
+            </div>
+        </div>
+        <a href="../../index.html">
+            <strong>Home</strong>
+        </a>
+        <a href="../../impressum/impressum.html">
+            <strong>Impressum</strong>
+        </a>
+    </div>
+    </br>
+
+    <div id=main>
+        <h1>Mainradweg</h1>
+        <div class="row2">
+            <div class="column2">
+                <table>
+                    <tr>
+                        <td>Gesamtlänge:</td>
+                        <td>
+                            <span id="laenge"></span> km</td>
+                    </tr>
+                    <tr>
+                        <td>Tiefster Punkt:</td>
+                        <td>
+                            <span id="tiefsterP"></span> m</td>
+                    </tr>
+                    <tr>
+                        <td>Höchster Punkt:</td>
+                        <td>
+                            <span id="hoechsterP"></span> m</td>
+                    </tr>
+                    <tr>
+                        <td>Aufstieg insgesamt:</td>
+                        <td>
+                            <span id="aufstieg"></span> m</td>
+                    </tr>
+                    <tr>
+                        <td>Abstieg insgesamt:</td>
+                        <td>
+                            <span id="abstieg"></span> m</td>
+                    </tr>
+                </table>
+                </div>
+                <div class="column2">
+                <div id="unterbild">
+                    <img src="../../images/frankfurt.jpg" alt="Frankfurt" />
+                </div>
+            </div>
+        </div>
+        <div class=hauptbeschreibung>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+
+            </p>
+        </div>
+        <div id="mapdiv" style="width:1055px;height:600px;"></div>
+
+        <div id="footer" class="gray">
+            <a class="back" href="../BodenseeKoenigssee/index.html">
+                <i class="fas fa-arrow-alt-circle-left"></i> vorhergehender Stop</a>
+            <a class="next" href="../Frankenradweg/index.html">nächster Stop
+                <i class="fas fa-arrow-alt-circle-right"></i>
+        </div>
+    </div>
+</body>
+
+</html>
