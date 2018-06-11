@@ -107,8 +107,8 @@ elevation.on("addline", function (evt) {
     // Hinzufuegen der Icons
     let start = gpxLinie[0]
     let finish = gpxLinie[gpxLinie.length - 1];
-    L.marker(start, markerOptionStart).addTo(strecken);// theoretisch mit bindPopup Infos Über die Start- und Zielorte(Mike);)z.B. .bindPopup("<p><a href='https://de.wikipedia.org/wiki/Imst'><strong>Imst</strong></a></p><img style = 'width:200px' src='https://www.stern-imst.at/fileadmin/template/images/hotel-imst-content/Home-Hotel-Imst/Winterwandern-Tirol-Imst-Blick-02.jpg' alt='Patscherkofel' />");
-    L.marker(finish, markerOptionsFinish).addTo(strecken);
+    L.marker(start, markerOptionStart).addTo(strecken).bindPopup("<p><a href='https://LinkwikiOderSo'><strong>Name der Stadt</strong></a></p>");
+    L.marker(finish, markerOptionsFinish).addTo(strecken).bindPopup("<p><a href='https://LinkwikiOderSo'><strong>Name der Stadt</strong></a></p>");
 
     for (let i = 1; i < gpxLinie.length; i++) {
         let p1 = gpxLinie[i - 1];
