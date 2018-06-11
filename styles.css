@@ -200,3 +200,10 @@ tr:nth-child(even) {
   display: table;
   clear: both;
 }
+
+.hauptbeschreibung img {
+  width: 80%;
+  border: 4px solid rgb(180, 105, 20);
+  border-radius: 0%;
+  border-width: thick;
+}
