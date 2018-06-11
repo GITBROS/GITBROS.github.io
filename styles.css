@@ -90,10 +90,12 @@ body {
 #main h1 {
   margin-left: 100px;
 }
-  .hauptbeschreibung {
+#main .hauptbeschreibung {
       width: 83.5%;
       margin-left: 100px;
       text-align: justify;
+      max-width: 1280px;
+
 
 
   }
