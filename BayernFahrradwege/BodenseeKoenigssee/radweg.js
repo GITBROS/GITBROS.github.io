@@ -81,7 +81,7 @@ const markerOptionsFinish = {
 };
 
 //GPX Datei Einlesen
-new L.GPX(rohstrecke, { async: true }).on('loaded', function (e) {
+new L.GPX(rohstrecke, { async: true,polyline_options: { color: "#483D8B" } }).on('loaded', function (e) {
     myMap.fitBounds(e.target.getBounds());
 }).addTo(strecken);
 
@@ -146,7 +146,7 @@ elevation.on("addline", function (evt) {
                 [p2.lat, p2.lng],
             ], {
                 color: farbe,
-                weight: 5,
+                weight: 3,
             }
         ).addTo(steigung);
     }
