@@ -107,8 +107,8 @@ elevation.on("addline", function (evt) {
     // Hinzufuegen der Icons
     let start = gpxLinie[0]
     let finish = gpxLinie[gpxLinie.length - 1];
-    L.marker(start, markerOptionStart).addTo(strecken).bindPopup("<p><a href='https://LinkwikiOderSo'><strong>Name der Stadt</strong></a></p>");
-    L.marker(finish, markerOptionsFinish).addTo(strecken).bindPopup("<p><a href='https://LinkwikiOderSo'><strong>Name der Stadt</strong></a></p>");
+    L.marker(start, markerOptionStart).addTo(strecken).bindPopup("<p><a href='https://de.wikipedia.org/wiki/Volkach'><strong>Volkach</strong></a></p>");
+    L.marker(finish, markerOptionsFinish).addTo(strecken).bindPopup("<p><a href='https://de.wikipedia.org/wiki/Bamberg'><strong>Bamberg</strong></a></p>");
 
     for (let i = 1; i < gpxLinie.length; i++) {
         let p1 = gpxLinie[i - 1];
